@@ -1,0 +1,17 @@
+{
+	"trailingComma": "es5",
+	"overrides": [
+		{
+			"files": "*.md",
+			"options": {
+				"proseWrap": "always"
+			}
+		},
+		{
+			"files": "*.js",
+			"options": {
+				"singleQuote": true
+			}
+		}
+	]
+}

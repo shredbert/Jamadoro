@@ -1,0 +1,36 @@
+{% extends "./app-layout.html" %}
+{% block title %}Jam{% endblock %}
+{% block scripts %}
+    <!-- Required for Spotify playback via script -->
+    <script>const SpotifyData = {{ spotify_data|tojson }};</script>
+{% endblock %}
+{% block nav_links %}
+    {% from "macros.html" import nav_item %}
+    {{ nav_item("/", "Jam", true) }}
+    {{ nav_item("/todos", "To Dos", false) }}
+{% endblock %}
+{% block main %}
+    <!-- Toast messages here... -->
+    {% include "toast-msgs.html" %}
+    <!-- To Dos -->
+    <div class="d-flex gap-1 flex-column align-items-center" id="crntTodo">
+        {% include "complete-todo.html" %}
+    </div>
+    <!-- Timer -->
+    <div id="intervalTimer">
+        <lit-interval-timer work-time-secs="{{ user_settings["work_time_secs"] }}" break-time-secs="{{ user_settings["break_time_secs"] }}"></lit-interval-timer>
+        {# <lit-interval-timer work-time-secs="3" break-time-secs="3"></lit-interval-timer> #}
+    </div>
+    <!-- Pomodoro goal/progress -->
+    <div class="card my-3" id="progressCard">
+        {% include "progress-card.html" %}
+    </div>
+    <!-- Spotify player info -->
+    <div class="card my-3" id="spotifyCard">
+        {% include "spotify-card.html" %}
+    </div>
+    <!-- Toggling app alerts on/off -- handled through script based on user settings -->
+    <div class="card my-3" id="notifCard">
+        {% include "notifications-card.html" %}
+    </div>
+{% endblock %}

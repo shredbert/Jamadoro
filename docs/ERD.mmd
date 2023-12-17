@@ -1,0 +1,29 @@
+erDiagram
+	JAMMER {
+		INTEGER jammer_id PK "IDENTITY"
+		VARCHAR email UK "NOT NULL"
+		VARCHAR jammer_pw "NOT NULL"
+		VARCHAR username "NOT NULL"
+		INTEGER work_time_secs "NOT NULL; DEFAULT 3000"
+		INTEGER break_time_secs "NOT NULL; DEFAULT 600"
+		INTEGER daily_goal_hrs "NOT NULL; DEFAULT 1"
+	}
+
+	POMODORO {
+		INTEGER pomodoro_id PK "IDENTITY"
+		INTEGER jammer_id FK "NOT NULL"
+		DATE completed_date "NOT NULL"
+		INTEGER duration_secs "NOT NULL"
+	}
+
+	TODO {
+		INTEGER todo_id PK "IDENTITY"
+		INTEGER jammer_id FK "NOT NULL"
+		VARCHAR todo_description "NOT NULL"
+		INTEGER list_order "NOT NULL"
+		BOOLEAN is_complete "NOT NULL; DEFAULT false"
+		DATE completed_date "NOT NULL"
+	}
+
+	JAMMER ||--o{ POMODORO : completes
+	JAMMER ||--o{ TODO : "focuses on"

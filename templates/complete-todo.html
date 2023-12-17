@@ -1,0 +1,17 @@
+<div class="d-flex fs-4 gap-3 justify-content-center mt-5">
+    <strong>Current To Do:</strong>
+    {% if next_todo %}
+        <span>{{ next_todo["todo_description"] }}</span>
+    {% else %}
+        No To Dos remaining
+    {% endif %}
+</div>
+{% if next_todo %}
+    <button class="btn btn-primary mt-1"
+            disabled
+            data-todo-id="{{ next_todo["todo_id"] }}"
+            id="completeTodoBtn"
+            type="button">Mark Complete</button>
+{% else %}
+    <a class="btn btn-primary mt-1" href="/todos">Add To Do</a>
+{% endif %}

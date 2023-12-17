@@ -1,0 +1,8 @@
+{# Macro for populating links on each page #}
+{% macro nav_item(route, name, active) %}
+    <li class="nav-item">
+        <a class="nav-link {{ "active" if active else "" }}" {{ "aria-current=true" if active else "aria-current=false" }} href="{{ route }}">
+            {{ name }}
+        </a>
+    </li>
+{% endmacro %}

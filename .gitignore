@@ -1,0 +1,32 @@
+# Vim session files
+Session.*
+
+# Environment vars
+.env
+
+# Flask dirs
+__pycache__
+flask_session/
+
+# Review READMEs
+README.html
+
+# Node files
+node_modules/
+
+# Bundled files with Node
+static/public/
+
+# Files from Flask-Assets
+static/.webassets-cache
+static/index.js
+static/index.css
+
+# Local Python packages
+.venv
+
+# Cookie for API
+/api-tests/api-cookie.txt
+
+# Log files
+log/

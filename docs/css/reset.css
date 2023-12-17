@@ -1,0 +1,83 @@
+/* Border box! */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* No font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+/* Reset margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Body */
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+}
+
+/* Shorter line heights for headers, etc. */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+textarea,
+label {
+	line-height: 1.2;
+}
+
+/* More headings */
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
+}
+
+/* Don't get rid of anchor styling unless applying class */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Gudder img tags */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Same fonts for all controls by default */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Textareas shouldn't be small if no rows attribute */
+textarea:not([rows]) {
+	min-height: 10em;
+}
+
+/* If scrolling to part of page, add some margin */
+:target {
+	scroll-margin-block: 5ex;
+}

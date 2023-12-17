@@ -1,0 +1,28 @@
+<div class="card-header d-flex align-items-center">
+    <svg class="me-1"
+         xmlns="http://www.w3.org/2000/svg"
+         width="16"
+         height="16"
+         fill="currentColor"
+         viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z" />
+    </svg>
+    <h2 class="fs-6 my-0">Progress</h2>
+</div>
+<div class="card-body d-flex flex-row justify-content-center">
+    <div class="d-flex flex-column align-items-end w-50 me-1">
+        <span class="fw-bold">Daily Goal:</span>
+        <span class="fw-bold">Time worked:</span>
+    </div>
+    <div class="d-flex flex-column align-items-start w-50 ms-1">
+        <span data-goal="{{ user_settings["daily_goal_hrs"] }}" id="sessionGoal">{{ user_settings["daily_goal_hrs"] }} hours</span>
+        {# Display to 2 decimals if not whole number, else just int #}
+        {% with dur = user_daily_sessions["duration_secs"] / 3600 %}
+            {% if dur % 1 == 0 %}
+                <span data-progress="{{ "%.f"|format(dur) }}" id="sessionsToday">{{ "%.f"|format(dur) }} hours</span>
+            {% else %}
+                <span data-progress="{{ "%.2f"|format(dur) }}" id="sessionsToday">{{ "%.2f"|format(dur) }} hours</span>
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>

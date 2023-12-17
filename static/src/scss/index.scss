@@ -1,0 +1,92 @@
+// Main styles for export -- combining Bootstrap & custom overrides/styles
+
+// Required Bootstrap dependencies
+
+// All URLs assume Sass's load-path is set to "node_modules/bootstrap/scss/" --
+// set from CLI
+
+// Functions first to manipulate colors, SVGs, calc, etc
+@import "functions";
+
+// Default variable overrides here -- must be after functions & before all
+// other imports
+/* Ex:
+
+$body-bg: #000;
+$body-color: #111;
+
+*/
+
+// Bootstrap theme styles
+@import "variables";
+@import "variables-dark";
+
+// Default map overrides here
+/* Ex:
+
+// Create your own map
+$custom-colors: (
+  "custom-color": #900
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+*/
+
+@import "maps";
+@import "mixins";
+@import "root";
+
+// Optional Bootstrap content & layout styles
+@import "reboot";
+@import "type";
+@import "images";
+@import "containers";
+@import "grid";
+
+// Bootstrap components
+
+// General
+@import "buttons";
+@import "forms";
+
+// Nav stuff
+@import "navbar";
+@import "nav";
+@import "transitions";
+@import "dropdown";
+@import "alert";
+@import "card";
+@import "toasts";
+@import "close";
+@import "tooltip";
+
+// Unused -- add as needed
+// @import "tables";
+// @import "button-group";
+// @import "accordion";
+// @import "breadcrumb";
+// @import "pagination";
+// @import "badge";
+// @import "progress";
+// @import "list-group";
+// @import "modal";
+// @import "popover";
+// @import "carousel";
+// @import "spinners";
+// @import "offcanvas";
+// @import "placeholders";
+
+// Bootstrap utilities & helpers
+@import "utilities";
+@import "helpers";
+
+// Custom utility overrids
+@import "custom-utils";
+
+// ***Final bootstrap import*** -- generates utility classes based on Sass map
+// in utilities.scss above
+@import "utilities/api";
+
+// TODO: Custom styles here

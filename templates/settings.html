@@ -1,0 +1,14 @@
+{% extends "app-layout.html" %}
+{% block title %}Settings{% endblock %}
+{% block nav_links %}
+    {% from "macros.html" import nav_item %}
+    {{ nav_item("/", "Jam", false) }}
+    {{ nav_item("/todos", "To Dos", false) }}
+{% endblock %}
+{% block main %}
+    <h1>Settings</h1>
+    <!-- Change PW -->
+    {% include "change-pw.html" %}
+    <!-- Session settings -->
+    {% include "session-settings.html" %}
+{% endblock %}

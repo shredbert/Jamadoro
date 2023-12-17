@@ -1,0 +1,61 @@
+/* Global styles */
+body {
+	background-color: var(--gray-0);
+	color: var(--gray-9);
+	font-family: var(--font-sans);
+	font-size: var(--font-size-fluid-0);
+	font-weight: var(--font-weight-5);
+	margin: auto;
+	max-inline-size: var(--size-content-3);
+}
+
+blockquote {
+	background-color: var(--gray-2);
+	border: var(--border-size-1) solid var(--gray-3);
+	border-radius: var(--radius-2);
+	box-shadow: var(--shadow-2);
+	color: var(--gray-11);
+	padding: var(--size-1) var(--size-2);
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-weight: var(--font-weight-6);
+	margin-block: var(--size-fluid-2);
+	max-inline-size: var(--size-header-3);
+}
+
+p {
+	margin-block: var(--size-fluid-1);
+}
+
+/* Table styles */
+table {
+	border-collapse: collapse;
+	box-shadow: var(--shadow-2);
+	table-layout: fixed;
+}
+
+tr {
+	border-top: var(--border-size-1) solid var(--gray-3);
+}
+
+thead > tr {
+	background-color: var(--gray-8);
+	color: var(--gray-0);
+}
+
+tbody > tr {
+	background-color: var(--gray-1);
+}
+
+tbody > tr:nth-of-type(odd) {
+	background-color: var(--gray-3);
+}
+
+th,
+td {
+	padding: var(--size-1) var(--size-2);
+}

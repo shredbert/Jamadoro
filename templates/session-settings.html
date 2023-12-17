@@ -1,0 +1,32 @@
+<section class="mt-2">
+    <hr />
+    <h2>Change Session Settings</h2>
+    <form action="change-session-settings" method="POST">
+        <div class="mt-3">
+            <label class="form-label">
+                Session Time:
+                <select class="form-select" name="session-opt">
+                    {% for k, v in session_opts.items() %}
+                        <option value="{{ k }}" {{ "selected" if v['is_selected'] == True else "" }}>
+                            {{ ((v["work_time_secs"] + v["break_time_secs"]) / 60)|int }} min:
+                            {{ v["work_time_secs"] / 60 }} work,
+                            {{ v["break_time_secs"] / 60 }} break
+                        </option>
+                    {% endfor %}
+                </select>
+            </label>
+        </div>
+        <div class="mt-3">
+            <label class="form-label">
+                Daily Session Goal (hours):
+                <input class="form-control"
+                       min="1"
+                       max="8"
+                       name="daily-goal"
+                       type="number"
+                       value="{{ goal }}" />
+            </label>
+        </div>
+        <button class="btn btn-primary mt-3">Change Session Settings</button>
+    </form>
+</section>

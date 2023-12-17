@@ -1,0 +1,44 @@
+{
+	"name": "cs50-final-project",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "Jamadoro, the Pomodoro timer with Spotify integration",
+	"main": "index.js",
+	"scripts": {
+		"dev:css": "sass --load-path=node_modules/bootstrap/scss/ --watch static/src/scss/index.scss:static/public/index.css --no-source-map",
+		"build:css": "sass --load-path=node_modules/bootstrap/scss/ --style=compressed static/src/scss/index.scss | postcss -o static/public/index.css",
+		"dev:js": "rollup -c -w",
+		"build:js": "rollup -c",
+		"build:docs": "mmdc -p ./.puppeteerConfig.json -i ./docs/ERD.mmd -o ./docs/img/ERD.svg ; pandoc -s -o README.html README.md",
+		"format:static:check": "prettier --check \"./{README.md,static/src/**/*.{js,scss}}\"",
+		"format:static:write": "prettier --write \"./{README.md,static/src/**/*.{js,scss}}\"",
+		"format:sql": "sql-formatter -c .sqlformatterrc.json -o scripts/load-schema.sql scripts/load-schema.sql",
+		"clean": "rm -rf ./static/public/*",
+		"dev": "npm-run-all -p dev:css dev:js",
+		"build": "npm-run-all -s clean -p build:css build:js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@popperjs/core": "^2.11.8",
+		"bootstrap": "^5.3.2",
+		"lit": "^2.8.0"
+	},
+	"devDependencies": {
+		"@mermaid-js/mermaid-cli": "^10.5.0",
+		"@rollup/plugin-json": "^6.0.0",
+		"@rollup/plugin-node-resolve": "^15.0.2",
+		"@rollup/plugin-terser": "^0.4.0",
+		"autoprefixer": "^10.4.14",
+		"dotenv": "^16.3.1",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.23",
+		"postcss-cli": "^10.1.0",
+		"prettier": "^2.8.8",
+		"rollup": "^3.20.2",
+		"rollup-plugin-summary": "^2.0.0",
+		"sass": "^1.60.0",
+		"sql-formatter": "^15.0.2"
+	}
+}

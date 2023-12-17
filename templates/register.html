@@ -1,0 +1,56 @@
+{% extends "./auth-layout.html" %}
+{% block title %}Register{% endblock %}
+{% block body %}
+    <h1 class="mt-3">Register</h1>
+    <form action="/register" class="mt-3" method="post">
+        <div class="mb-3">
+            <label class="form-label">
+                Username
+                <input autocomplete="on"
+                       autofocus
+                       class="form-control"
+                       name="username"
+                       required
+                       type="text" />
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">
+                Email
+                <input autocomplete="on"
+                       class="form-control"
+                       name="email"
+                       required
+                       type="email" />
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">
+                Password
+                <input autocomplete="new-password"
+                       class="form-control"
+                       name="password"
+                       maxlength="30"
+                       minlength="8"
+                       required
+                       type="password" />
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">
+                Confirm Password
+                <input autocomplete="new-password"
+                       class="form-control"
+                       name="confirm"
+                       maxlength="30"
+                       minlength="8"
+                       required
+                       type="password" />
+            </label>
+        </div>
+        <button class="btn btn-primary">Register</button>
+    </form>
+    <p class="mt-3">
+        Already have an account? <a href="/login">Log in.</a>
+    </p>
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <title>Jamadoro:
+            {% block title %}{% endblock %}
+        </title>
+        {% assets "js" %}
+            <script defer src="{{ ASSET_URL }}"></script>
+        {% endassets %}
+        {% assets "css" %}
+            <link href="{{ ASSET_URL }}" rel="stylesheet" />
+        {% endassets %}
+    </head>
+    <body class="container mt-5 mx-auto w-90 w-sm-75 w-lg-50 w-xl-25">
+        <header>
+            <p class="h6">Jamadoro</p>
+            {% include "flashed-msgs.html" %}
+        </header>
+        {% block body %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,4 @@
+@import "./css/reset.css" layer(reset);
+@import "https://unpkg.com/open-props" layer(open-props);
+@import "./css/vars.css" layer(vars);
+@import "./css/globals.css" layer(globals);

@@ -1,0 +1,24 @@
+// Use Bootstrap's utilities API to generate additional utilities
+
+// Width utilities
+
+// Merge with OG widths & make responsive while adding a 90% option
+$utilities: map-merge(
+	$utilities,
+	(
+		"width":
+			map-merge(
+				map-get($utilities, "width"),
+				(
+					responsive: true,
+					values:
+						map-merge(
+							map-get(map-get($utilities, "width"), "values"),
+							(
+								90: 90%,
+							)
+						),
+				)
+			),
+	)
+);
